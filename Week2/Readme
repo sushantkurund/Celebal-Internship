@@ -1,0 +1,168 @@
+# Week 2 Assignment – Tesla Deliveries Analysis and Machine Learning Pipeline
+
+## Overview
+
+This project focuses on analyzing Tesla deliveries and production data from 2015 to 2025 using data analysis and machine learning techniques. The objective is to understand trends in Tesla deliveries, perform feature engineering, build predictive models, and evaluate their performance using standard machine learning metrics.
+
+The project follows a complete machine learning workflow including data exploration, preprocessing, feature engineering, model training, hyperparameter tuning, forecasting, and statistical testing.
+
+---
+
+## Dataset
+
+Dataset Used:
+
+Tesla EV Deliveries and Production Data (2015–2025)
+
+Source:
+https://www.kaggle.com/datasets/nalisha/tesla-ea-deliveries-and-production-data20152025
+
+The dataset contains information related to:
+
+- Year
+- Month
+- Region
+- Model
+- Estimated Deliveries
+- Production Units
+- Average Price
+- Battery Capacity
+- Vehicle Range
+- CO2 Saved
+- Charging Stations
+- Source Type
+
+---
+
+## Objectives
+
+- Analyze Tesla deliveries and production trends.
+- Perform Exploratory Data Analysis (EDA).
+- Handle data preprocessing and feature engineering.
+- Create lag and rolling mean features.
+- Train and evaluate a Linear Regression model.
+- Perform 5 Fold Cross Validation.
+- Optimize a Random Forest model using GridSearchCV.
+- Analyze feature importance.
+- Perform stationarity testing using the ADF Test.
+- Generate delivery forecasts and compare predictions with actual values.
+
+---
+
+## Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit Learn
+- Statsmodels
+- Google Colab
+
+---
+
+## Project Workflow
+
+### 1. Data Loading and Understanding
+
+- Loaded dataset into a Pandas DataFrame.
+- Examined dataset structure using:
+  - shape
+  - columns
+  - info()
+  - describe()
+
+### 2. Data Quality Checks
+
+- Checked for missing values.
+- Checked for duplicate records.
+
+### 3. Exploratory Data Analysis
+
+Created the following visualizations:
+
+- Deliveries by Model
+- Deliveries by Region
+- Correlation Heatmap
+- Production vs Deliveries Scatter Plot
+- Time Trend Analysis
+
+### 4. Data Preprocessing
+
+- Applied Label Encoding to:
+  - Region
+  - Model
+  - Source_Type
+
+### 5. Feature Engineering
+
+Created:
+
+- Deliveries_Lag1
+- Rolling_Mean_3
+
+### 6. Model Development
+
+#### Linear Regression
+
+Evaluated using:
+
+- MAE
+- RMSE
+- R² Score
+
+#### 5 Fold Cross Validation
+
+Used to evaluate model stability and generalization.
+
+#### Random Forest Regression
+
+Performed hyperparameter tuning using GridSearchCV with:
+
+- n_estimators = [50, 100]
+- max_depth = [5, 10, None]
+
+### 7. Feature Importance Analysis
+
+Visualized the top 10 most important features identified by the Random Forest model.
+
+### 8. Time Series Analysis
+
+Performed Augmented Dickey Fuller (ADF) Test to evaluate stationarity of Estimated Deliveries.
+
+### 9. Forecasting
+
+Created a forecast table comparing:
+
+- Actual Values
+- Predicted Values
+- Error Percentage
+
+for the first 20 test observations.
+
+---
+
+## Key Learnings
+
+- Data preprocessing and feature engineering techniques.
+- Exploratory Data Analysis using visualizations.
+- Regression model development and evaluation.
+- Cross Validation and Hyperparameter Tuning.
+- Feature Importance Analysis.
+- Time Series Stationarity Testing.
+- Forecasting and prediction evaluation.
+
+---
+
+## Conclusion
+
+This project demonstrates a complete machine learning workflow using Tesla deliveries and production data. Through data analysis, feature engineering, model training, validation, and forecasting, meaningful insights were obtained regarding Tesla delivery patterns and production trends. The results show how machine learning models can be used to analyze historical business data and generate accurate predictions for future observations.
+
+---
+
+## Author
+
+Sushant Kurund
+
+Celebal Technologies Internship – Week 2 Assignment
