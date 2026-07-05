@@ -1,37 +1,25 @@
-# CIFAR-10 Image Classification using ANN and CNN
+# CIFAR-10 Image Classification using Artificial Neural Networks and Convolutional Neural Networks
 
-## Overview
+## Introduction
 
-This project implements and compares image classification models using an Artificial Neural Network (ANN) and a Convolutional Neural Network (CNN) on the CIFAR-10 dataset. It demonstrates the advantages of CNNs for image-based tasks and explores training improvements such as data augmentation and Early Stopping.
-
----
-
-## Problem Statement
-
-Build an image classification model on the CIFAR-10 dataset and analyze the performance of different neural network architectures and training strategies.
-
-The project includes:
-
-- Baseline Artificial Neural Network (ANN)
-- Convolutional Neural Network (CNN)
-- Performance comparison
-- Validation accuracy visualization
-- Data augmentation
-- EarlyStopping
-- Model performance analysis
+This project was completed as part of **Week 4** of the **Celebal Technologies Data Science Internship**. The goal was to explore deep learning techniques for image classification by implementing both an **Artificial Neural Network (ANN)** and a **Convolutional Neural Network (CNN)** on the CIFAR-10 dataset. In addition to building baseline models, the project investigates the effect of model improvements such as data augmentation, deeper architectures, and EarlyStopping.
 
 ---
 
-## Dataset
+## About the Dataset
 
-**Dataset:** CIFAR-10
+The models were trained and evaluated using the **CIFAR-10** benchmark dataset, which is widely used for image classification tasks.
 
-The dataset contains **60,000 RGB images** of size **32 × 32** belonging to **10 classes**.
+**Dataset Details**
 
+- Total Images: 60,000
 - Training Images: 50,000
-- Test Images: 10,000
+- Testing Images: 10,000
+- Image Resolution: 32 × 32 pixels
+- Color Format: RGB
+- Number of Categories: 10
 
-### Classes
+### Image Categories
 
 - Airplane
 - Automobile
@@ -46,124 +34,165 @@ The dataset contains **60,000 RGB images** of size **32 × 32** belonging to **1
 
 ---
 
-## Project Workflow
+## Project Pipeline
 
-1. Load the CIFAR-10 dataset
-2. Visualize sample images
-3. Normalize image pixel values
-4. Flatten images for the ANN model
-5. Build and train the ANN
-6. Build and train the CNN
-7. Compare ANN and CNN performance
-8. Plot validation accuracy curves
-9. Apply data augmentation
-10. Train an improved CNN with EarlyStopping
-11. Evaluate model performance
+The implementation follows a complete deep learning workflow:
 
----
-
-## Models Implemented
-
-### 1. Artificial Neural Network (ANN)
-
-Architecture
-
-- Flatten
-- Dense (512)
-- Dropout
-- Dense (256)
-- Dropout
-- Dense (128)
-- Dense (64)
-- Output Layer (Softmax)
+- Load and inspect the CIFAR-10 dataset
+- Normalize image pixel values
+- Prepare image data for ANN and CNN architectures
+- Train a baseline ANN model
+- Train a baseline CNN model
+- Compare model performance
+- Improve the CNN using advanced training techniques
+- Evaluate and analyze the final results
 
 ---
 
-### 2. Convolutional Neural Network (CNN)
+## Data Preparation
 
-Architecture
+Before training, the following preprocessing steps were applied:
 
-- Conv2D (32)
-- BatchNormalization
-- MaxPooling2D
-- Conv2D (64)
-- BatchNormalization
-- MaxPooling2D
-- Conv2D (128)
+- Pixel values were scaled from **0–255** to **0–1**
+- Images were flattened into one-dimensional vectors for the ANN
+- Original image dimensions were retained for the CNN
+- Sample images were visualized to verify the dataset
+
+---
+
+## Model Architectures
+
+### Artificial Neural Network (ANN)
+
+The ANN serves as a baseline model for comparison.
+
+Architecture includes:
+
+- Flatten Layer
+- Dense Layers
+- Dropout Regularization
+- Softmax Output Layer
+
+This model learns from flattened image vectors without preserving spatial relationships between pixels.
+
+---
+
+### Convolutional Neural Network (CNN)
+
+The CNN is designed specifically for image data.
+
+Layers used include:
+
+- Conv2D
 - BatchNormalization
 - MaxPooling2D
 - Flatten
 - Dense
 - Dropout
-- Output Layer
+- Softmax Output
+
+Unlike the ANN, the CNN extracts meaningful spatial features directly from the images.
 
 ---
 
-### 3. Augmented CNN
+## Model Training
 
-Additional preprocessing layers:
+Both models were trained using the following configuration:
 
-- RandomFlip
-- RandomRotation
-- RandomZoom
+| Parameter | Value |
+|-----------|-------|
+| Optimizer | Adam |
+| Loss Function | Sparse Categorical Crossentropy |
+| Evaluation Metric | Accuracy |
+| Batch Size | 64 |
+| Validation Split | 10% |
 
-Training improvements:
-
-- EarlyStopping
-- 20 Epochs
-
----
-
-## Training Configuration
-
-- Optimizer: Adam
-- Loss Function: Sparse Categorical Crossentropy
-- Metric: Accuracy
-- Batch Size: 64
-- Validation Split: 10%
-- Epochs:
-  - Baseline Models: 10
-  - Improved Model: 20
+The baseline models were trained for **10 epochs**, while the enhanced CNN was trained for **20 epochs** with EarlyStopping enabled.
 
 ---
 
-## Student Learning Tasks Completed
+## Performance Improvements
 
-- Increased ANN architecture
-- Increased CNN filters (32 → 64 → 128)
-- Increased training epochs to 20
-- Added EarlyStopping
-- Implemented Data Augmentation
-- Compared ANN and CNN performance
+Several enhancements were introduced to improve the CNN model:
+
+- Increased the number of Dense layers in the ANN
+- Expanded convolutional filters from **32 → 64 → 128**
+- Increased training duration to **20 epochs**
+- Applied **EarlyStopping** to reduce overfitting
+- Introduced image augmentation using:
+  - RandomFlip
+  - RandomRotation
+  - RandomZoom
+
+These modifications were implemented to improve learning efficiency and model generalization.
 
 ---
 
-## Technologies Used
+## Model Comparison
+
+| Model | Description |
+|--------|-------------|
+| ANN | Baseline fully connected neural network trained on flattened images |
+| CNN | Convolution-based architecture capable of learning spatial image features |
+| Enhanced CNN | CNN with data augmentation, deeper architecture, and EarlyStopping |
+
+---
+
+## Technologies and Libraries
+
+The project was implemented using:
 
 - Python
-- TensorFlow / Keras
+- TensorFlow
+- Keras
 - NumPy
 - Matplotlib
 - Google Colab
 
 ---
 
-## Results
+## Key Findings
 
-The CNN significantly outperformed the ANN because convolutional layers preserve spatial information and automatically learn hierarchical image features. Data augmentation and EarlyStopping further improved model generalization and reduced overfitting.
+The experimental results highlight several important observations:
+
+- CNN consistently achieved higher classification accuracy than the ANN.
+- Preserving spatial information significantly improves image recognition performance.
+- Data augmentation increased the model's ability to generalize to unseen images.
+- EarlyStopping reduced unnecessary training and helped prevent overfitting.
+- Increasing the depth of the network enabled the model to learn more complex image features.
+
+---
+
+## Learning Outcomes
+
+Through this assignment, I gained practical experience in:
+
+- Image preprocessing techniques
+- Artificial Neural Networks (ANN)
+- Convolutional Neural Networks (CNN)
+- Feature extraction using convolution
+- Batch Normalization
+- Dropout Regularization
+- Data Augmentation
+- EarlyStopping
+- Model evaluation and comparison
+- Deep learning model development using TensorFlow and Keras
+
+---
+
+## Repository Structure
+
+```
+Week4/
+├── CIFAR10_ANN_CNN_Learning_Project.ipynb
+└── README.md
+```
 
 ---
 
 ## Conclusion
 
-This project demonstrates that:
-
-- ANNs can perform image classification but are limited because they flatten image data and lose spatial relationships.
-- CNNs achieve much higher accuracy by learning local and hierarchical visual features.
-- Data augmentation improves model robustness.
-- EarlyStopping helps prevent overfitting and restores the best-performing model.
-
-Overall, the enhanced CNN provided the best classification performance on the CIFAR-10 dataset.
+This project demonstrates the importance of selecting an appropriate neural network architecture for image classification tasks. While the ANN provides a useful baseline, the CNN delivers significantly better performance by preserving spatial information and learning hierarchical visual features. Additional techniques such as data augmentation and EarlyStopping further enhance the robustness and accuracy of the model.
 
 ---
 
@@ -171,5 +200,6 @@ Overall, the enhanced CNN provided the best classification performance on the CI
 
 **Sushant**
 
-MCA – Data Science
-Celebal Technologies Internship – Week 4
+MCA (Data Science)
+
+Celebal Technologies – Data Science Internship
