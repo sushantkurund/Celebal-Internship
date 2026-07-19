@@ -34,21 +34,19 @@ This project implements a Convolutional Denoising Autoencoder using TensorFlow a
 
 # Dataset
 
-This project uses the **MNIST PNG Dataset**.
+This project uses the **MNIST PNG Dataset** for training and evaluating the Convolutional Denoising Autoencoder.
 
-> **Note:** The dataset is not included in this repository.
+The dataset can be downloaded from Kaggle:
 
-Place the provided `archive.zip` file in the project directory before running the notebook.
+- https://www.kaggle.com/datasets/awsaf49/mnist-dataset
 
-After extraction, the folder structure should be:
+After downloading and extracting the dataset, the directory structure should look like this:
 
 ```text
 mnist_png/
 ├── training/
 └── testing/
 ```
-
----
 
 # Tech Stack
 
