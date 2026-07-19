@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🧠 Week 6 - Convolutional Denoising Autoencoder using MNIST
+#  Week 6 - Convolutional Denoising Autoencoder using MNIST
 
 ### Celebal Technologies Summer Internship 2026
 
@@ -15,7 +15,7 @@ Build and train a **Convolutional Denoising Autoencoder (CDAE)** to reconstruct 
 
 ---
 
-# 📌 Project Overview
+#  Project Overview
 
 This project demonstrates the implementation of a **Convolutional Denoising Autoencoder** using **TensorFlow** and **Keras**.
 
@@ -23,7 +23,7 @@ The model learns to remove **Gaussian noise** from handwritten digit images and 
 
 ---
 
-# 🎯 Objectives
+#  Objectives
 
 - Load and preprocess the MNIST dataset.
 - Add Gaussian noise to input images.
@@ -34,7 +34,7 @@ The model learns to remove **Gaussian noise** from handwritten digit images and 
 
 ---
 
-# 📂 Dataset
+#  Dataset
 
 This project uses the **MNIST PNG Dataset**.
 
@@ -52,7 +52,7 @@ mnist_png/
 
 ---
 
-# 🛠️ Tech Stack
+#  Tech Stack
 
 - Python
 - TensorFlow
@@ -64,7 +64,7 @@ mnist_png/
 
 ---
 
-# 🏗️ Model Architecture
+#  Model Architecture
 
 ```
 Input Image (28×28×1)
@@ -94,7 +94,7 @@ Denoised Image
 
 ---
 
-# ⚙️ Model Configuration
+#  Model Configuration
 
 | Parameter | Value |
 |-----------|-------|
@@ -107,7 +107,7 @@ Denoised Image
 
 ---
 
-# 📈 Training Loss
+#  Training Loss
 
 > Save your loss graph as `assets/training_loss.png`
 
@@ -117,7 +117,7 @@ Denoised Image
 
 ---
 
-# 🖼️ Original vs Noisy Images
+#  Original vs Noisy Images
 
 > Save the screenshot as `assets/original_noisy.png`
 
@@ -127,7 +127,7 @@ Denoised Image
 
 ---
 
-# ✨ Denoised Results
+#  Denoised Results
 
 > Save the final comparison as `assets/denoised_results.png`
 
@@ -137,7 +137,7 @@ Denoised Image
 
 ---
 
-# 📊 Results
+#  Results
 
 - Successfully removed Gaussian noise from handwritten digit images.
 - Training and validation loss decreased consistently.
@@ -147,7 +147,7 @@ Denoised Image
 
 ---
 
-# 📁 Repository Structure
+#  Repository Structure
 
 ```text
 week6/
@@ -162,7 +162,7 @@ week6/
 
 ---
 
-# ▶️ How to Run
+#  How to Run
 
 1. Clone this repository.
 2. Place `archive.zip` inside the project directory.
@@ -171,7 +171,7 @@ week6/
 
 ---
 
-# 👨‍💻 Author
+#  Author
 
 **Sushant Kurund**
 
