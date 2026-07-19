@@ -1,10 +1,14 @@
 <div align="center">
 
-#  Week 6 - Convolutional Denoising Autoencoder using MNIST
+# Week 6 - Convolutional Denoising Autoencoder using MNIST
 
 ### Celebal Technologies Summer Internship 2026
 
-Build and train a **Convolutional Denoising Autoencoder (CDAE)** to reconstruct clean handwritten digit images from noisy inputs using the **MNIST** dataset.
+Build and train a Convolutional Denoising Autoencoder (CDAE) to reconstruct clean handwritten digit images from noisy inputs using the MNIST dataset.
+
+<img src="assets/cover.png" width="850">
+
+<br>
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange?logo=tensorflow)
@@ -15,30 +19,30 @@ Build and train a **Convolutional Denoising Autoencoder (CDAE)** to reconstruct 
 
 ---
 
-#  Project Overview
+# Project Overview
 
-This project demonstrates the implementation of a **Convolutional Denoising Autoencoder** using **TensorFlow** and **Keras**.
+This project demonstrates the implementation of a Convolutional Denoising Autoencoder using TensorFlow and Keras.
 
-The model learns to remove **Gaussian noise** from handwritten digit images and reconstruct high-quality images while preserving important features.
+The model learns to remove Gaussian noise from handwritten digit images and reconstruct clean images while preserving important visual features.
 
 ---
 
-#  Objectives
+# Objectives
 
-- Load and preprocess the MNIST dataset.
-- Add Gaussian noise to input images.
+- Load and preprocess the MNIST PNG dataset.
+- Add Gaussian noise to the input images.
 - Build a Convolutional Denoising Autoencoder.
-- Train the model using noisy-clean image pairs.
+- Train the model to reconstruct clean images.
 - Evaluate reconstruction quality using Mean Squared Error (MSE).
-- Visualize the denoising performance.
+- Compare the original, noisy, and reconstructed images.
 
 ---
 
-#  Dataset
+# Dataset
 
 This project uses the **MNIST PNG Dataset**.
 
-> **Note:** The dataset is **not included** in this repository to keep the repository lightweight.
+> **Note:** The dataset is **not included** in this repository.
 
 Place the provided `archive.zip` file in the project directory before running the notebook.
 
@@ -52,7 +56,7 @@ mnist_png/
 
 ---
 
-#  Tech Stack
+# Tech Stack
 
 - Python
 - TensorFlow
@@ -64,7 +68,7 @@ mnist_png/
 
 ---
 
-#  Model Architecture
+# Model Architecture
 
 ```
 Input Image (28×28×1)
@@ -94,7 +98,7 @@ Denoised Image
 
 ---
 
-#  Model Configuration
+# Model Configuration
 
 | Parameter | Value |
 |-----------|-------|
@@ -107,51 +111,44 @@ Denoised Image
 
 ---
 
-#  Training Loss
+# Results
 
-> Save your loss graph as `assets/training_loss.png`
+## Training and Validation Loss
+
+The training and validation loss decrease steadily throughout training, showing that the model successfully learns to reconstruct clean images without significant overfitting.
 
 <p align="center">
-<img src="assets/training_loss.png" width="700">
+<img src="assets/training_loss.png" width="750">
 </p>
 
 ---
 
-#  Original vs Noisy Images
+## Original and Noisy Images
 
-> Save the screenshot as `assets/original_noisy.png`
+Gaussian noise is added to the original MNIST images before they are passed to the autoencoder.
 
 <p align="center">
-<img src="assets/original_noisy.png" width="700">
+<img src="assets/original_noisy.png" width="750">
 </p>
 
 ---
 
-#  Denoised Results
+## Image Reconstruction
 
-> Save the final comparison as `assets/denoised_results.png`
+The trained autoencoder removes most of the noise while preserving the important features of each handwritten digit.
 
 <p align="center">
-<img src="assets/denoised_results.png" width="700">
+<img src="assets/denoised_results.png" width="750">
 </p>
 
 ---
 
-#  Results
-
-- Successfully removed Gaussian noise from handwritten digit images.
-- Training and validation loss decreased consistently.
-- Early Stopping prevented overfitting.
-- Generated high-quality reconstructed images.
-- Achieved a low Mean Squared Error (MSE), indicating good reconstruction performance.
-
----
-
-#  Repository Structure
+# Repository Structure
 
 ```text
 week6/
 │── assets/
+│   ├── cover.png
 │   ├── training_loss.png
 │   ├── original_noisy.png
 │   └── denoised_results.png
@@ -162,16 +159,16 @@ week6/
 
 ---
 
-#  How to Run
+# How to Run
 
-1. Clone this repository.
-2. Place `archive.zip` inside the project directory.
+1. Clone the repository.
+2. Place `archive.zip` in the project directory.
 3. Open the notebook in Google Colab or Jupyter Notebook.
-4. Run all cells sequentially.
+4. Run all the cells sequentially.
 
 ---
 
-#  Author
+# Author
 
 **Sushant Kurund**
 
