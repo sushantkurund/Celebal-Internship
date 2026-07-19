@@ -38,7 +38,7 @@ This project uses the **MNIST PNG Dataset** for training and evaluating the Conv
 
 The dataset can be downloaded from Kaggle:
 
-- https://www.kaggle.com/datasets/awsaf49/mnist-dataset
+- [MNIST PNG Dataset (Kaggle)](https://www.kaggle.com/datasets/awsaf49/mnist-dataset)
 
 After downloading and extracting the dataset, the directory structure should look like this:
 
@@ -47,6 +47,8 @@ mnist_png/
 ├── training/
 └── testing/
 ```
+
+---
 
 # Tech Stack
 
@@ -62,7 +64,7 @@ mnist_png/
 
 # Model Architecture
 
-```
+```text
 Input Image (28×28×1)
         │
 Conv2D (32)
@@ -110,7 +112,7 @@ Denoised Image
 The following images are sample handwritten digits from the MNIST dataset before any preprocessing or noise is added.
 
 <p align="center">
-<img src="assets/original.png" width="750">
+  <img src="assets/original.png" width="750">
 </p>
 
 ---
@@ -120,7 +122,7 @@ The following images are sample handwritten digits from the MNIST dataset before
 Gaussian noise is added to the original images to create the training input for the autoencoder.
 
 <p align="center">
-<img src="assets/original_noisy.png" width="750">
+  <img src="assets/original_noisy.png" width="750">
 </p>
 
 ---
@@ -130,7 +132,7 @@ Gaussian noise is added to the original images to create the training input for 
 After training, the model successfully reconstructs clean images by removing most of the added noise while preserving the important features of each handwritten digit.
 
 <p align="center">
-<img src="assets/denoised_results.png" width="750">
+  <img src="assets/denoised_results.png" width="750">
 </p>
 
 ---
@@ -140,7 +142,7 @@ After training, the model successfully reconstructs clean images by removing mos
 The training and validation loss decrease consistently during training, showing that the model learns effective image representations while maintaining good generalization.
 
 <p align="center">
-<img src="assets/training_loss.png" width="750">
+  <img src="assets/training_loss.png" width="750">
 </p>
 
 ---
@@ -160,7 +162,7 @@ The training and validation loss decrease consistently during training, showing 
 ```text
 week6/
 │── assets/
-│   ├── original_images.png
+│   ├── original.png
 │   ├── original_noisy.png
 │   ├── denoised_results.png
 │   └── training_loss.png
@@ -174,9 +176,17 @@ week6/
 # How to Run
 
 1. Clone this repository.
-2. Place `archive.zip` inside the project directory.
-3. Open the notebook using Google Colab or Jupyter Notebook.
-4. Run all cells sequentially.
+2. Download the **MNIST PNG Dataset** from Kaggle.
+3. Extract the dataset so the directory structure is:
+
+```text
+mnist_png/
+├── training/
+└── testing/
+```
+
+4. Open `Week6_Sushant_DPGU.ipynb` using **Google Colab** or **Jupyter Notebook**.
+5. Run all cells sequentially.
 
 ---
 
