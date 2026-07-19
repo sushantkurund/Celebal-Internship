@@ -112,7 +112,7 @@ Denoised Image
 The following images are sample handwritten digits from the MNIST dataset before any preprocessing or noise is added.
 
 <p align="center">
-<img src="assets/original_images.png" width="750">
+<img src="assets/training_loss.png.png" width="750">
 </p>
 
 ---
