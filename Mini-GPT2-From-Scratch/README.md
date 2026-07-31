@@ -1,39 +1,45 @@
-# GPT-2 From Scratch
+# Mini GPT-2 From Scratch
 
-This project is part of the **Celebal Technologies Internship – Week 8** and demonstrates the implementation of a **GPT-2 inspired Decoder-Only Transformer** built entirely from scratch using **PyTorch**. The model is trained on the **Tiny Shakespeare** dataset, served through a **FastAPI** backend, and accessed through a **React + Vite** frontend.
+A complete implementation of a **Mini GPT-2 inspired Decoder-Only Transformer** built entirely from scratch using **PyTorch**, trained on the **Tiny Shakespeare** dataset, deployed through a **FastAPI** backend, and served with a **React + Vite** frontend.
+
+This project demonstrates the complete workflow of building a Transformer-based language model from the ground up, including data preprocessing, model training, autoregressive text generation, API deployment, and an interactive web interface.
 
 ---
 
 # Project Overview
 
-This project demonstrates the complete implementation of a miniature GPT-2 style language model without relying on high-level transformer libraries.
+The objective of this project is to gain a deep understanding of modern Transformer architectures by implementing every major component manually instead of relying on high-level libraries.
 
-The primary objective is to gain a practical understanding of Transformer-based language models by manually implementing each major component, including:
+The implementation includes:
 
 - Character-Level Tokenization
 - Embedding Layers
 - Positional Embeddings
 - Multi-Head Self-Attention
 - Transformer Decoder Blocks
+- Feed Forward Networks
 - Autoregressive Text Generation
-- Model Training
-- Model Inference
+- Model Training using PyTorch
+- REST API Deployment using FastAPI
+- Interactive React Frontend
 
-The trained model generates Shakespeare-style text from user-provided prompts through an interactive web application.
+The trained model generates Shakespeare-style text from user prompts while demonstrating the complete end-to-end pipeline of a Transformer-based language model.
 
 ---
 
 # Features
 
-- Character-Level Tokenizer
 - GPT-2 Inspired Decoder-Only Transformer
+- Character-Level Tokenizer
 - Multi-Head Self-Attention
 - Positional Embeddings
 - Transformer Decoder Blocks
+- Feed Forward Network
 - Temperature-Based Sampling
 - Character-Level Text Generation
 - Automatic Model Checkpoint Saving
 - FastAPI REST API
+- Interactive Swagger Documentation
 - React + Vite Frontend
 - Adjustable Temperature
 - Adjustable Maximum Tokens
@@ -49,31 +55,31 @@ The trained model generates Shakespeare-style text from user-provided prompts th
                   Tiny Shakespeare Dataset
                             │
                             ▼
-                   Character Tokenizer
+                  Character Tokenizer
                             │
                             ▼
-                 Character Embedding Layer
+                Character Embedding Layer
                             │
                             ▼
-                Positional Embedding Layer
+               Positional Embedding Layer
                             │
                             ▼
-        Decoder-Only Transformer (GPT Style)
+      Decoder-Only Transformer (GPT Style)
                             │
                             ▼
-              Multi-Head Self Attention
+             Multi-Head Self Attention
                             │
                             ▼
-                   Feed Forward Network
+                  Feed Forward Network
                             │
                             ▼
-                     Language Model Head
+                   Language Model Head
                             │
                             ▼
-                 Next Character Prediction
+                Next Character Prediction
                             │
                             ▼
-                     Generated Text Output
+                  Generated Text Output
 ```
 
 ---
@@ -81,12 +87,12 @@ The trained model generates Shakespeare-style text from user-provided prompts th
 # Project Structure
 
 ```text
-Week-8-Mini-GPT2-From-Scratch/
+Mini-GPT2-From-Scratch/
 
 ├── assets/
-│   ├── home-page.png
-│   ├── generated-output.png
-│   └── swagger-ui.png
+│   ├── home.png
+│   ├── output.png
+│   └── swagger.png
 │
 ├── backend/
 │   └── main.py
@@ -136,8 +142,8 @@ Week-8-Mini-GPT2-From-Scratch/
 |-----------|------------|
 | Programming Language | Python |
 | Deep Learning Framework | PyTorch |
-| Backend | FastAPI |
-| Frontend | React |
+| Backend Framework | FastAPI |
+| Frontend Framework | React |
 | Build Tool | Vite |
 | API Communication | Axios |
 | Styling | CSS |
@@ -184,12 +190,10 @@ Week-8-Mini-GPT2-From-Scratch/
 
 # Getting Started
 
-This project is located inside the **Celebal Technologies Internship** repository.
-
 Navigate to the project directory:
 
 ```bash
-cd Week-8-Mini-GPT2-From-Scratch
+cd Mini-GPT2-From-Scratch
 ```
 
 ---
@@ -214,13 +218,13 @@ source env/bin/activate
 
 ## Install Dependencies
 
-Install the Python dependencies:
+Install Python dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Install the React dependencies:
+Install frontend dependencies:
 
 ```bash
 cd frontend
@@ -242,9 +246,9 @@ During training, the model:
 - Performs character-level tokenization
 - Trains the decoder-only Transformer architecture
 - Evaluates validation loss during training
-- Saves the best-performing model checkpoint
+- Saves the best-performing model checkpoint automatically
 
-The trained model is automatically saved to:
+The trained model is stored in:
 
 ```text
 checkpoints/model.pth
@@ -260,13 +264,13 @@ Generate text directly from the terminal:
 python -m src.generate
 ```
 
-Example prompt:
+Example Prompt
 
 ```text
 KING
 ```
 
-Example generated output:
+Example Output
 
 ```text
 KING EDWARD IV:
@@ -278,25 +282,19 @@ And many we deservilure the maniston all the praying...
 
 # Running the Backend
 
-Navigate to the project directory:
-
-```bash
-cd Week-8-Mini-GPT2-From-Scratch
-```
-
 Start the FastAPI server:
 
 ```bash
 uvicorn backend.main:app --reload
 ```
 
-The backend will be available at:
+Backend URL
 
 ```
 http://127.0.0.1:8000
 ```
 
-Interactive API documentation (Swagger UI):
+Swagger API Documentation
 
 ```
 http://127.0.0.1:8000/docs
@@ -318,7 +316,7 @@ Install the required packages:
 npm install
 ```
 
-Run the React development server:
+Start the development server:
 
 ```bash
 npm run dev
@@ -332,29 +330,29 @@ http://localhost:5173
 
 ---
 
-# Web Application Features
+# Web Application
 
-The web interface allows users to:
+The web interface provides the following functionality:
 
 - Enter custom prompts
 - Adjust Temperature
 - Adjust Maximum Tokens
 - Generate Shakespeare-style text
-- Copy generated output
-- Download generated output
-- Clear previous output
+- Copy generated text
+- Download generated text
+- Clear generated output
 
 ---
 
 # Sample Outputs
 
-Example generated outputs are available in:
+Sample generated outputs are available in:
 
 ```text
 outputs/
 ```
 
-These demonstrate the text generation capability of the trained language model.
+These samples demonstrate the language generation capability of the trained model.
 
 ---
 
@@ -366,13 +364,13 @@ The complete implementation notebook is available in:
 notebook/
 ```
 
-The notebook contains the complete experimentation, model development, and training workflow used while building the GPT-2 inspired language model.
+The notebook documents the complete development workflow, including preprocessing, model implementation, training, evaluation, and experimentation.
 
 ---
 
 # Learning Outcomes
 
-This project provided hands-on experience with:
+This project provided practical experience with:
 
 - Character-Level Tokenization
 - Embedding Layers
@@ -384,25 +382,28 @@ This project provided hands-on experience with:
 - Temperature-Based Sampling
 - Model Training using PyTorch
 - FastAPI Backend Development
-- REST API Integration
+- REST API Design
 - React Frontend Development
+- Full-Stack AI Application Deployment
 
 ---
 
 # Future Improvements
 
-Possible enhancements include:
+Potential enhancements include:
 
 - Top-k Sampling
 - Top-p (Nucleus) Sampling
 - Beam Search Decoding
 - Learning Rate Scheduling
 - Mixed Precision Training
-- Multilingual Dataset Training
 - Word-Level or Subword Tokenization
-- Larger GPT Configurations
+- Multilingual Dataset Training
+- Larger GPT Model Configurations
 - GPU Optimized Training
 - Docker Deployment
+- Cloud Deployment
+- User Authentication and Prompt History
 
 ---
 
@@ -416,24 +417,24 @@ Possible enhancements include:
 
 ---
 
+# Acknowledgements
+
+This project was inspired by the educational work of **Andrej Karpathy** on implementing GPT-style language models from scratch.
+
+The architecture and implementation were developed independently using PyTorch to gain a practical understanding of Transformer models, self-attention mechanisms, autoregressive language modeling, and deployment using modern web technologies.
+
+---
+
 # Author
 
 **Sushant Kurund**
 
 Master of Computer Applications (Data Science)
 
-GitHub Profile:
-
-https://github.com/sushantkurund
-
----
-
-# Acknowledgements
-
-This project was developed as part of the **Celebal Technologies Internship – Week 8**. It is inspired by the educational work of Andrej Karpathy on implementing GPT-style language models from scratch.
+GitHub: https://github.com/sushantkurund
 
 ---
 
 # License
 
-This project is intended for educational purposes and demonstrates the implementation of a miniature GPT-2 inspired decoder-only Transformer architecture built entirely from scratch using PyTorch.
+This project is intended for educational and learning purposes. It demonstrates the implementation of a Mini GPT-2 inspired Decoder-Only Transformer architecture built entirely from scratch using PyTorch.
