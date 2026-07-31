@@ -172,7 +172,7 @@ Week-8-Mini-GPT2-From-Scratch/
 
 ## Generated Output
 
-![Generated Output](assets/generated.png)
+![Generated Output](assets/output.png)
 
 ---
 
