@@ -166,19 +166,19 @@ Week-8-Mini-GPT2-From-Scratch/
 
 ## Home Page
 
-![Home Page](assets/home-page.png)
+![Home Page](assets/home.png)
 
 ---
 
 ## Generated Output
 
-![Generated Output](assets/generated-output.png)
+![Generated Output](assets/generated.png)
 
 ---
 
 ## Swagger API Documentation
 
-![Swagger UI](assets/swagger-ui.png)
+![Swagger UI](assets/swagger.png)
 
 ---
 
