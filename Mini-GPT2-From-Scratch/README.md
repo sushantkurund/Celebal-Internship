@@ -1,6 +1,6 @@
 # GPT-2 From Scratch
 
-A complete implementation of a **GPT-2 inspired Decoder-Only Transformer** built entirely from scratch using **PyTorch**, trained on the **Tiny Shakespeare** dataset, served through a **FastAPI** backend, and deployed with a **React + Vite** frontend.
+This project is part of the **Celebal Technologies Internship – Week 8** and demonstrates the implementation of a **GPT-2 inspired Decoder-Only Transformer** built entirely from scratch using **PyTorch**. The model is trained on the **Tiny Shakespeare** dataset, served through a **FastAPI** backend, and accessed through a **React + Vite** frontend.
 
 ---
 
@@ -8,7 +8,7 @@ A complete implementation of a **GPT-2 inspired Decoder-Only Transformer** built
 
 This project demonstrates the complete implementation of a miniature GPT-2 style language model without relying on high-level transformer libraries.
 
-The objective of this project is to understand the internal workings of Transformer-based language models by implementing every major component manually, including:
+The primary objective is to gain a practical understanding of Transformer-based language models by manually implementing each major component, including:
 
 - Character-Level Tokenization
 - Embedding Layers
@@ -31,7 +31,7 @@ The trained model generates Shakespeare-style text from user-provided prompts th
 - Positional Embeddings
 - Transformer Decoder Blocks
 - Temperature-Based Sampling
-- Text Generation
+- Character-Level Text Generation
 - Automatic Model Checkpoint Saving
 - FastAPI REST API
 - React + Vite Frontend
@@ -81,12 +81,12 @@ The trained model generates Shakespeare-style text from user-provided prompts th
 # Project Structure
 
 ```text
-mini-gpt2-from-scratch/
+Week-8-Mini-GPT2-From-Scratch/
 
-│── assets/
-│   ├── home.png
-│   ├── output.png
-│   └── swagger.png
+├── assets/
+│   ├── home-page.png
+│   ├── generated-output.png
+│   └── swagger-ui.png
 │
 ├── backend/
 │   └── main.py
@@ -98,9 +98,12 @@ mini-gpt2-from-scratch/
 │   └── tinyshakespeare.txt
 │
 ├── frontend/
-│   ├── src/
 │   ├── public/
-│   └── package.json
+│   ├── src/
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── vite.config.js
+│   └── index.html
 │
 ├── notebook/
 │   └── MiniGPT2.ipynb
@@ -155,6 +158,7 @@ mini-gpt2-from-scratch/
 | Transformer Layers | 4 |
 | Dropout | 0.2 |
 | Optimizer | AdamW |
+| Best Validation Loss | 1.6918 |
 
 ---
 
@@ -162,46 +166,30 @@ mini-gpt2-from-scratch/
 
 ## Home Page
 
-Replace this image with your screenshot.
-
-```text
-assets/home.png
-```
-
-![Home Screen](assets/home.png)
+![Home Page](assets/home-page.png)
 
 ---
 
 ## Generated Output
 
-```text
-assets/output.png
-```
-
-![Generated Output](assets/output.png)
+![Generated Output](assets/generated-output.png)
 
 ---
 
 ## Swagger API Documentation
 
-```text
-assets/swagger.png
-```
-
-![Swagger API](assets/swagger.png)
+![Swagger UI](assets/swagger-ui.png)
 
 ---
 
 # Getting Started
 
-## Clone the Repository
+This project is located inside the **Celebal Technologies Internship** repository.
+
+Navigate to the project directory:
 
 ```bash
-git clone https://github.com/sushantkurund/Celebal-Internship.git
-```
-
-```bash
-cd mini-gpt2-from-scratch
+cd Week-8-Mini-GPT2-From-Scratch
 ```
 
 ---
@@ -226,8 +214,17 @@ source env/bin/activate
 
 ## Install Dependencies
 
+Install the Python dependencies:
+
 ```bash
 pip install -r requirements.txt
+```
+
+Install the React dependencies:
+
+```bash
+cd frontend
+npm install
 ```
 ---
 
@@ -243,8 +240,8 @@ During training, the model:
 
 - Loads the Tiny Shakespeare dataset
 - Performs character-level tokenization
-- Trains the decoder-only Transformer
-- Evaluates validation loss
+- Trains the decoder-only Transformer architecture
+- Evaluates validation loss during training
 - Saves the best-performing model checkpoint
 
 The trained model is automatically saved to:
@@ -263,13 +260,13 @@ Generate text directly from the terminal:
 python -m src.generate
 ```
 
-Example Prompt
+Example prompt:
 
 ```text
 KING
 ```
 
-Example Output
+Example generated output:
 
 ```text
 KING EDWARD IV:
@@ -281,19 +278,25 @@ And many we deservilure the maniston all the praying...
 
 # Running the Backend
 
+Navigate to the project directory:
+
+```bash
+cd Week-8-Mini-GPT2-From-Scratch
+```
+
 Start the FastAPI server:
 
 ```bash
 uvicorn backend.main:app --reload
 ```
 
-Backend URL
+The backend will be available at:
 
 ```
 http://127.0.0.1:8000
 ```
 
-Swagger Documentation
+Interactive API documentation (Swagger UI):
 
 ```
 http://127.0.0.1:8000/docs
@@ -309,19 +312,19 @@ Navigate to the frontend directory:
 cd frontend
 ```
 
-Install dependencies:
+Install the required packages:
 
 ```bash
 npm install
 ```
 
-Start the React application:
+Run the React development server:
 
 ```bash
 npm run dev
 ```
 
-Open:
+Open the application in your browser:
 
 ```
 http://localhost:5173
@@ -329,47 +332,47 @@ http://localhost:5173
 
 ---
 
-# Web Application
+# Web Application Features
 
-The web interface provides the following functionality:
+The web interface allows users to:
 
-- Prompt Input
-- Temperature Control
-- Maximum Token Control
-- Generate Shakespeare-style Text
-- Copy Generated Output
-- Download Generated Output
-- Clear Generated Output
+- Enter custom prompts
+- Adjust Temperature
+- Adjust Maximum Tokens
+- Generate Shakespeare-style text
+- Copy generated output
+- Download generated output
+- Clear previous output
 
 ---
 
 # Sample Outputs
 
-Sample generated outputs are available in:
+Example generated outputs are available in:
 
 ```text
 outputs/
 ```
 
-This folder contains text generated by the trained language model.
+These demonstrate the text generation capability of the trained language model.
 
 ---
 
 # Notebook
 
-The project notebook is available in:
+The complete implementation notebook is available in:
 
 ```text
 notebook/
 ```
 
-It contains the complete experimentation and development workflow used while implementing and training the GPT model.
+The notebook contains the complete experimentation, model development, and training workflow used while building the GPT-2 inspired language model.
 
 ---
 
 # Learning Outcomes
 
-This project demonstrates practical implementation and understanding of:
+This project provided hands-on experience with:
 
 - Character-Level Tokenization
 - Embedding Layers
@@ -379,7 +382,7 @@ This project demonstrates practical implementation and understanding of:
 - Transformer Decoder Architecture
 - Autoregressive Language Modeling
 - Temperature-Based Sampling
-- PyTorch Model Development
+- Model Training using PyTorch
 - FastAPI Backend Development
 - REST API Integration
 - React Frontend Development
@@ -393,19 +396,19 @@ Possible enhancements include:
 - Top-k Sampling
 - Top-p (Nucleus) Sampling
 - Beam Search Decoding
-- Learning Rate Scheduler
+- Learning Rate Scheduling
 - Mixed Precision Training
-- Multilingual Training
-- Word-Level Tokenization
+- Multilingual Dataset Training
+- Word-Level or Subword Tokenization
 - Larger GPT Configurations
-- GPU Acceleration
+- GPU Optimized Training
 - Docker Deployment
 
 ---
 
 # References
 
-- Andrej Karpathy's educational materials on Transformers and GPT models
+- Andrej Karpathy – Neural Networks: Zero to Hero
 - PyTorch Documentation
 - FastAPI Documentation
 - React Documentation
@@ -419,12 +422,18 @@ Possible enhancements include:
 
 Master of Computer Applications (Data Science)
 
-GitHub
+GitHub Profile:
 
 https://github.com/sushantkurund
 
 ---
 
+# Acknowledgements
+
+This project was developed as part of the **Celebal Technologies Internship – Week 8**. It is inspired by the educational work of Andrej Karpathy on implementing GPT-style language models from scratch.
+
+---
+
 # License
 
-This project is developed for educational purposes to demonstrate the implementation of a GPT-2 inspired decoder-only Transformer architecture built entirely from scratch using PyTorch.
+This project is intended for educational purposes and demonstrates the implementation of a miniature GPT-2 inspired decoder-only Transformer architecture built entirely from scratch using PyTorch.
